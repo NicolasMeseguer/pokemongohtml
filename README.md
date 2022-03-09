@@ -4,5 +4,5 @@
 
 ## Creditos
 
-Amaia (apellidos)
+Amaia de Pablo Ruiz
 Nicolás Meseguer Iborra
