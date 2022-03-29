@@ -1,7 +1,6 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
-  padding-bottom: 20px;
   background-color: #0069e1;
   background: url(../images/header-background-sticky.png);
   background-size: cover;
@@ -12,9 +11,9 @@ body {
 }
 
 .jumbo-nav .navigation-wrapper {
-  background: url(../images/hero-skyline.jpg) no-repeat;
+  background: url(../images/hero-skyline.png) no-repeat;
   min-height: 200px;
-  background-position: center top;
+  background-position: center;
   background-size: cover;
 }
 
@@ -114,4 +113,22 @@ img.pokemon.small {max-height: 120px;
 .navbar-inverse .navbar-nav>.active>a:hover {
     background-color: #ffcb05;
     text-shadow: 0px 0px 5px #0069e1;
+}
+
+.footer {
+  background-color: rgb(0,0,0);
+  border: none;
+  padding-bottom: 20px;
+}
+
+.footer-nav li a {
+  color: #fff !important;
+}
+
+.nav>li>a:hover {
+  background-color: transparent;
+}
+
+.projectname {
+  color: #fff !important;
 }
