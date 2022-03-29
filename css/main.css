@@ -115,6 +115,8 @@ img.pokemon.small {max-height: 120px;
     text-shadow: 0px 0px 5px #0069e1;
 }
 
+/* CSS PROPIO */
+
 .footer {
   background-color: rgb(0,0,0);
   border: none;
@@ -131,4 +133,11 @@ img.pokemon.small {max-height: 120px;
 
 .projectname {
   color: #fff !important;
+}
+
+.jumbo-nav #pokedexNav {
+  background: url(../images/hero-skyline.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }

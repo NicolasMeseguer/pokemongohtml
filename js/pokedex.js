@@ -1,11 +1,14 @@
 $(document).ready(function(){
-    let URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=1";
+    let URL = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=52";
 
     let pokedex = document.querySelector('#pokedex');
 
     let xhr = new XMLHttpRequest();
     var pokemonrequest = [];
     var i = 0;
+
+    // Modal
+    $('#myModal').modal('show');
 
     xhr.open("GET", URL);
 
@@ -16,7 +19,7 @@ $(document).ready(function(){
             for(const pokemon of pokemons.results) {
                 (function(i) {
                     pokemonrequest[i] = new XMLHttpRequest();
-                    pokemonrequest[i].open("GET", pokemon['url'], true);
+                    pokemonrequest[i].open("GET", pokemon['url'], false);
     
                     pokemonrequest[i].onreadystatechange = function(){
                         if (pokemonrequest[i].readyState === 4 && pokemonrequest[i].status === 200){
@@ -24,9 +27,55 @@ $(document).ready(function(){
                             
                             var pokemonName = pokemondata.name;
                             var pokemonImage = pokemondata.sprites.front_default;
+                            var pokemonId = pokemondata.id;
+                            
+                            // Crear los div's y ponerles el nombre y la imagen
+                            var pokeCard = document.createElement("div");
+                            pokeCard.classList.add('col-md-3');
 
-                            // Iterable
-                            var pokemonType = pokemondata.types;
+                            // Pokeball div
+                            var pokeballCard = document.createElement("div");
+                            pokeballCard.classList.add('pokeball-wrapper');
+                            var pokeball = document.createElement("img");
+                            pokeball.src = './images/pokeball.png';
+                            pokeballCard.appendChild(pokeball);
+                            pokeCard.appendChild(pokeballCard);
+
+                            // Pokemon div
+                            var pokemonCard = document.createElement("div");
+                            pokemonCard.classList.add('enhanced');
+
+                            // Pokemon div -> h2
+                            var pokemonNameCard = document.createElement("h2");
+                            pokemonNameCard.classList.add('text-center');
+                            pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+                            var pokemonNameContent = document.createTextNode(pokemonName);
+                            pokemonNameCard.appendChild(pokemonNameContent);
+                            pokemonCard.appendChild(pokemonNameCard);
+
+                            // Pokemon div -> img
+                            var pokemonLink = document.createElement("a");
+                            pokemonLink.href = "https://www.pokemon.com/es/pokedex/" + pokemonId;
+
+                            var pokemonImgCard = document.createElement("img");
+                            pokemonImgCard.classList.add('pokemon', 'medium');
+                            pokemonImgCard.src = pokemonImage;
+
+                            pokemonLink.appendChild(pokemonImgCard)
+                            pokemonCard.appendChild(pokemonLink);
+
+                            for(const type of pokemondata.types) {
+                                var typeImg = document.createElement("img");
+                                typeImg.classList.add('pokemon', 'medium');
+                                typeImg.src = "./images/types/" + type.type.name + ".svg";
+                                pokemonCard.appendChild(typeImg);
+                            }
+                            
+                            // Ahora que tiene todo lo que necesita, metemos el div al container
+                            pokeCard.appendChild(pokemonCard);
+
+                            // Todo OK, añadir al body
+                            pokedex.appendChild(pokeCard)
                         }
                     };
     

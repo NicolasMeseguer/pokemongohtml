@@ -45,7 +45,7 @@
     </nav>
 
      <nav class="jumbo-nav">
-      <div class="navigation-wrapper">
+      <div class="navigation-wrapper" id="pokedexNav">
         <div class="navigation">
           <div class="header-logo">
             <a href="#">
@@ -54,20 +54,51 @@
           </div>
         </div>
       
+        <!-- Modal -->
+        <div class="modal fade in" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Típos de pokemon</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row" style="padding:15px">
+                  Cada pokemon es de un tipo distinto, incluso algunos de ellos obtienen un nuevo tipo al evolucionar.
+                  <br/><br/>
+                  La leyenda es la siguiente:<br/>
+                  <img src="./images/types/steel.svg" /> Acero<br/>
+                  <img src="./images/types/water.svg" /> Agua<br/>
+                  <img src="./images/types/bug.svg" /> Bicho<br/>
+                  <img src="./images/types/dragon.svg" /> Dragón<br/>
+                  <img src="./images/types/electric.svg" /> Eléctrico<br/>
+                  <img src="./images/types/ghost.svg" /> Fantasma<br/>
+                  <img src="./images/types/fire.svg" /> Fuego<br/>
+                  <img src="./images/types/ice.svg" /> Hielo<br/>
+                  <img src="./images/types/fighting.svg" /> Lucha<br/>
+                  <img src="./images/types/normal.svg" /> Normal<br/>
+                  <img src="./images/types/dark.svg" /> Oscuro<br/>
+                  <img src="./images/types/grass.svg" /> Planta<br/>
+                  <img src="./images/types/psychic.svg" /> Psíquico<br/>
+                  <img src="./images/types/rock.svg" /> Roca<br/>
+                  <img src="./images/types/ground.svg" /> Tierra<br/>
+                  <img src="./images/types/poison.svg" /> Veneno<br/>
+                  <img src="./images/types/flying.svg" /> Volador<br/>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Entiendo !</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Pokedex Goes Here -->
         <div class="container">
           <div class="row" id="pokedex">
 
-            <div class="col-md-3">
-              <div class="pokeball-wrapper">
-                <img src="./images/pokeball.png" />
-              </div>
-              <div class="enhanced">
-                <h2>Heading</h2>
-                <img class="pokemon small" src="./images/pokemon2.png" />
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              </div>
-            </div>
 
           </div>
         </div>
