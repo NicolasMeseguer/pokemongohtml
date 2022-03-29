@@ -100,7 +100,6 @@ img.pokemon.small {max-height: 120px;
     padding: 5px;
     float: left;
     margin: 0 10px 0 0;
-    background-color: #fff;
 }
 
 /** bootstrap overwrites **/
@@ -114,4 +113,17 @@ img.pokemon.small {max-height: 120px;
 .navbar-inverse .navbar-nav>.active>a:hover {
     background-color: #ffcb05;
     text-shadow: 0px 0px 5px #0069e1;
+}
+
+.raidWeatherIcon{
+  max-width: 30px;
+}
+
+.raidTypeIcon{
+  max-width: 30px;
+}
+
+div#raid-icons {
+  justify-content: space-between;
+  display: flex;
 }
