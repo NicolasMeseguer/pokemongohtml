@@ -7,8 +7,11 @@ $(document).ready(function(){
     var pokemonrequest = [];
     var i = 0;
 
-    // Modal
-    $('#myModal').modal('show');
+    // Comprobar si el valor de mostrar en local storage es 1
+    var cerrarModalStatus = localStorage.getItem("cerrarModal");
+    if(cerrarModalStatus != 1) {
+        $('#myModal').modal('show');
+    }
 
     xhr.open("GET", URL);
 
@@ -68,6 +71,7 @@ $(document).ready(function(){
                                 var typeImg = document.createElement("img");
                                 typeImg.classList.add('pokemon', 'medium');
                                 typeImg.src = "./images/types/" + type.type.name + ".svg";
+                                typeImg.id = "typeImg";
                                 pokemonCard.appendChild(typeImg);
                             }
                             
@@ -84,14 +88,16 @@ $(document).ready(function(){
                 })(i);
                 i++;
             }
-
         }
         else
             console.log("Error en la comunicación con la API, STATUS NOT 200");
-
     }
     xhr.onerror = function() {
         console.log("Error en la comunicación con la API");
+    }
+
+    document.getElementById('cerrarModal').onclick = function() {
+        localStorage.setItem("cerrarModal", 1);
     }
 
     xhr.send();

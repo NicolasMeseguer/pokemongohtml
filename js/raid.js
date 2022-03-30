@@ -1,9 +1,9 @@
-window.onload = function() {
+window.onload = function () {
     let xhr = new XMLHttpRequest()
     xhr.open("GET", "https://pogoapi.net/api/v1/raid_bosses.json")
     xhr.onload = function () {
-        if (xhr.status == 200){
-            let arrayRaids= JSON.parse(xhr.responseText)
+        if (xhr.status == 200) {
+            let arrayRaids = JSON.parse(xhr.responseText)
 
 
             tierMega5(arrayRaids);
@@ -18,23 +18,23 @@ window.onload = function() {
 function tierMega5(arrayRaids) {
     let bosses = document.querySelector('#raid-bosses')
     bosses.insertAdjacentHTML("beforeend", '<div class="col-md-4" id="mega"></div>')
-            
+
     let mega = document.querySelector('#mega')
-           
-    for(raid of arrayRaids.current.mega){
-        let weatherHTML=''
+
+    for (raid of arrayRaids.current.mega) {
+        let weatherHTML = ''
         raid.boosted_weather.forEach(boostweather => {
-        weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/'+boostweather+'.png">'
+            weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/' + boostweather + '.png">'
 
         });
         let typeHTML = ''
         raid.type.forEach(raidType => {
-        typeHTML = typeHTML +'<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-'+raidType.toLowerCase()+'.png">'
+            typeHTML = typeHTML + '<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-' + raidType.toLowerCase() + '.png">'
 
         });
-        let raidform=""
-        if (raid.form !="Normal") {
-           raidform= "-"+raid.form.toLowerCase()
+        let raidform = ""
+        if (raid.form != "Normal") {
+            raidform = "-" + raid.form.toLowerCase()
         }
 
         let raidHTML = `<div class="pokeball-wrapper">
@@ -55,15 +55,15 @@ function tierMega5(arrayRaids) {
 
 
     }
-    for(raid of arrayRaids.current[5]){
-        let weatherHTML=''
+    for (raid of arrayRaids.current[5]) {
+        let weatherHTML = ''
         raid.boosted_weather.forEach(boostweather => {
-        weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/'+boostweather+'.png">'
+            weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/' + boostweather + '.png">'
 
         });
         let typeHTML = ''
         raid.type.forEach(raidType => {
-        typeHTML = typeHTML +'<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-'+raidType.toLowerCase()+'.png">'
+            typeHTML = typeHTML + '<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-' + raidType.toLowerCase() + '.png">'
 
         });
 
@@ -88,18 +88,18 @@ function tierMega5(arrayRaids) {
 function tier3(arrayRaids) {
     let bosses = document.querySelector('#raid-bosses')
     bosses.insertAdjacentHTML("beforeend", '<div class="col-md-4" id="tier3"></div>')
-            
+
     let tier3 = document.querySelector('#tier3')
-           
-    for(raid of arrayRaids.current[3]){
-        let weatherHTML=''
+
+    for (raid of arrayRaids.current[3]) {
+        let weatherHTML = ''
         raid.boosted_weather.forEach(boostweather => {
-        weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/'+boostweather+'.png">'
+            weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/' + boostweather + '.png">'
 
         });
         let typeHTML = ''
         raid.type.forEach(raidType => {
-        typeHTML = typeHTML +'<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-'+raidType.toLowerCase()+'.png">'
+            typeHTML = typeHTML + '<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-' + raidType.toLowerCase() + '.png">'
 
         });
 
@@ -127,18 +127,18 @@ function tier3(arrayRaids) {
 function tier1(arrayRaids) {
     let bosses = document.querySelector('#raid-bosses')
     bosses.insertAdjacentHTML("beforeend", '<div class="col-md-4" id="tier1"></div>')
-            
+
     let tier1 = document.querySelector('#tier1')
-           
-    for(raid of arrayRaids.current[1]){
-        let weatherHTML=''
+
+    for (raid of arrayRaids.current[1]) {
+        let weatherHTML = ''
         raid.boosted_weather.forEach(boostweather => {
-        weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/'+boostweather+'.png">'
+            weatherHTML = weatherHTML + '<img class="raidWeatherIcon" src="./images/weather/' + boostweather + '.png">'
 
         });
         let typeHTML = ''
         raid.type.forEach(raidType => {
-        typeHTML = typeHTML +'<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-'+raidType.toLowerCase()+'.png">'
+            typeHTML = typeHTML + '<img class="raidTypeIcon" src="https://assets.thesilphroad.com/img/pogo-assets/type-' + raidType.toLowerCase() + '.png">'
 
         });
 
