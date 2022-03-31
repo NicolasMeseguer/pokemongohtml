@@ -34,7 +34,10 @@ $(document).ready(function(){
                             
                             // Crear los div's y ponerles el nombre y la imagen
                             var pokeCard = document.createElement("div");
-                            pokeCard.classList.add('col-md-3');
+                            pokeCard.classList.add('col-lg-3');
+                            pokeCard.classList.add('col-md-4');
+                            pokeCard.classList.add('col-sm-6');
+                            pokeCard.classList.add('col-6');
 
                             // Pokeball div
                             var pokeballCard = document.createElement("div");

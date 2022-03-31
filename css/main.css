@@ -124,6 +124,10 @@ img.pokemon.small {max-height: 120px;
   padding-top: 20px;
 }
 
+#footer-especial {
+  background-color: rgb(0,0,0) !important;
+}
+
 .footer-nav li a {
   color: #fff !important;
 }
