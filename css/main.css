@@ -192,3 +192,7 @@ img.trainer.medium {max-height: 250px;
 #pokedex-bottom{
   text-align: center;
 }
+
+.text-trainer-idx {
+  margin: 5px;
+}
