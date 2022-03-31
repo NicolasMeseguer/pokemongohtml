@@ -172,3 +172,14 @@ div#raid-icons {
 .equipo-div {
   margin: 10px 10px 40px 10px;
 }
+
+.twitter-div {
+  max-height: 350px;
+  overflow: scroll;
+}
+
+img.trainer.medium {max-height: 250px;
+  padding: 5px;
+  float: left;
+  margin: 0 10px 0 0;
+}
