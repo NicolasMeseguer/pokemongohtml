@@ -183,3 +183,12 @@ img.trainer.medium {max-height: 250px;
   float: left;
   margin: 0 10px 0 0;
 }
+
+
+#addPokemon{
+  margin: 20px;
+}
+
+#pokedex-bottom{
+  text-align: center;
+}
