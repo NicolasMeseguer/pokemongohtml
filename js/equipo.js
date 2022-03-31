@@ -24,6 +24,7 @@ let botonRemove = document.querySelectorAll('.pokemonquitar').forEach(button => 
 function añadirPokemon(e) {
   // Abrir modal
   $('#myModal').modal('show');
+  document.getElementById('pokemonName').value = "";
 
   document.getElementById('equipoBuscarPokemon').onclick = function() {
     var pokemonName = document.getElementById('pokemonName').value;

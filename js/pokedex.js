@@ -7,9 +7,6 @@ $(document).ready(function(){
     }
 
     anadirPokemon();
-   
-   
-
 });
 
 var last =0;
@@ -22,15 +19,13 @@ function anadirPokemon(e){
     if(last<900){
         let URL = "https://pokeapi.co/api/v2/pokemon?offset="+last+"&limit=52";
 
-        last= last + 52;
+        last = last + 52;
 
         let pokedex = document.querySelector('#pokedex');
 
         let xhr = new XMLHttpRequest();
         var pokemonrequest = [];
         var i = 0;
-
-
 
         xhr.open("GET", URL);
 
