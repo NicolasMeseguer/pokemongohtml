@@ -74,7 +74,7 @@ function añadirPokemon(e) {
 
 function eliminarPokemon(e) {
     // Actualizar imagen
-    e.target.parentElement.querySelector('.pokemon').src = "../images/no-pokemon.png";
+    e.target.parentElement.querySelector('.pokemon').src = "./images/no-pokemon.png";
     let pos_x = e.target.parentElement.firstChild.nextSibling.nextSibling.nextSibling.value;
     e.target.parentElement.firstChild.nextSibling.innerHTML = "Pokemon " + pos_x;
 
