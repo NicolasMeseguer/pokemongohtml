@@ -1,5 +1,7 @@
 $(document).ready(function(){   
     
+    document.getElementById('addPokemon').classList.add('hidden');
+
     // Comprobar si el valor de mostrar en local storage es 1
     var cerrarModalStatus = localStorage.getItem("cerrarModal");
     if(cerrarModalStatus != 1) {
@@ -99,12 +101,12 @@ function anadirPokemon(e){
 
                                     // Todo OK, añadir al body
                                     pokedex.appendChild(pokeCard)
+                                    document.getElementById('addPokemon').classList.remove('hidden');
                                 }
                             }
                         };
         
                         pokemonrequest[i].send();
-            
                     })(i);
                     i++;
                 }
