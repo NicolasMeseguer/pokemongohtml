@@ -34,7 +34,12 @@ function tierMega5(arrayRaids) {
         });
         let raidform = ""
         if (raid.form != "Normal") {
-            raidform = "-" + raid.form.toLowerCase()
+            if (raid.form == "Galarian") {
+                raidform = "-galar"
+            }
+            else{            
+                raidform = "-" + raid.form.toLowerCase()
+            }
         }
 
         let raidHTML = `<div class="pokeball-wrapper">
@@ -67,12 +72,23 @@ function tierMega5(arrayRaids) {
 
         });
 
+        let raidName = raid.id
+        if (raid.form != "Normal") {
+            raidName = raid.name.toLowerCase()
+            if (raid.form == "Galarian") {
+                raidName = "-galar"
+            }
+            else{            
+                raidName = "-" + raid.form.toLowerCase()
+            }
+        }
+
         let raidHTML = `<div class="pokeball-wrapper">
         <img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png">
     </div>
     <div class="enhanced">
         <h2>${raid.name}</h2>
-        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raid.id}.png" />
+        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raidName}.png" />
         <div id="raid-icons">
         <div id="type-icons">${typeHTML}</div>
         <div id="weather-icons">${weatherHTML}</div>
@@ -103,12 +119,23 @@ function tier3(arrayRaids) {
 
         });
 
+        let raidName = raid.id
+        if (raid.form != "Normal") {
+            raidName = raid.name.toLowerCase()
+            if (raid.form == "Galarian") {
+                raidName = "-galar"
+            }
+            else{            
+                raidName = "-" + raid.form.toLowerCase()
+            }
+        }
+
         let raidHTML = `<div class="pokeball-wrapper">
         <img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png"><img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png">
     </div>
     <div class="enhanced">
         <h2>${raid.name}</h2>
-        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raid.id}.png" />
+        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raidName}.png" />
         <div id="raid-icons">
         <div id="type-icons">${typeHTML}</div>
         <div id="weather-icons">${weatherHTML}</div>
@@ -142,12 +169,23 @@ function tier1(arrayRaids) {
 
         });
 
+        let raidName = raid.id
+        if (raid.form != "Normal") {
+            raidName = raid.name.toLowerCase()
+            if (raid.form == "Galarian") {
+                raidName = "-galar"
+            }
+            else{            
+                raidName = "-" + raid.form.toLowerCase()
+            }
+        }
+
         let raidHTML = `<div class="pokeball-wrapper">
        <img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/raid-icon.png">
     </div>
     <div class="enhanced">
         <h2>${raid.name}</h2>
-        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raid.id}.png" />
+        <img class="pokemon small" src="https://assets.thesilphroad.com/img/pokemon/icons/96x96/${raidName}.png" />
         <div id="raid-icons">
         <div id="type-icons">${typeHTML}</div>
         <div id="weather-icons">${weatherHTML}</div>
