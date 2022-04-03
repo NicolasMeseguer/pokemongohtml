@@ -196,3 +196,7 @@ img.trainer.medium {max-height: 250px;
 .text-trainer-idx {
   margin: 5px;
 }
+
+.raidTierIcon{
+  filter:invert(0.7)
+}

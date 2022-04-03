@@ -38,7 +38,7 @@ function tierMega5(arrayRaids) {
         }
 
         let raidHTML = `<div class="pokeball-wrapper">
-        <img src="https://assets.thesilphroad.com/img/pogo-assets/mega-raid-icon.png" />
+        <img class="raidTierIcon" src="https://assets.thesilphroad.com/img/pogo-assets/mega-raid-icon.png" />
     </div>
     <div class="enhanced">
         <h2>${raid.name}</h2>
