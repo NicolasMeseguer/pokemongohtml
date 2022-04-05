@@ -35,10 +35,10 @@ function tierMega5(arrayRaids) {
         let raidform = ""
         if (raid.form != "Normal") {
             if (raid.form == "Galarian") {
-                raidform = "-galar"
+                raidform = raidform + "-galar"
             }
             else{            
-                raidform = "-" + raid.form.toLowerCase()
+                raidform = raidform + "-" + raid.form.toLowerCase()
             }
         }
 
@@ -76,10 +76,10 @@ function tierMega5(arrayRaids) {
         if (raid.form != "Normal") {
             raidName = raid.name.toLowerCase()
             if (raid.form == "Galarian") {
-                raidName = "-galar"
+                raidName = raidName + "-galar"
             }
             else{            
-                raidName = "-" + raid.form.toLowerCase()
+                raidName = raidName + "-" + raid.form.toLowerCase()
             }
         }
 
@@ -123,10 +123,10 @@ function tier3(arrayRaids) {
         if (raid.form != "Normal") {
             raidName = raid.name.toLowerCase()
             if (raid.form == "Galarian") {
-                raidName = "-galar"
+                raidName = raidName + "-galar"
             }
             else{            
-                raidName = "-" + raid.form.toLowerCase()
+                raidName = raidName + "-" + raid.form.toLowerCase()
             }
         }
 
@@ -173,10 +173,10 @@ function tier1(arrayRaids) {
         if (raid.form != "Normal") {
             raidName = raid.name.toLowerCase()
             if (raid.form == "Galarian") {
-                raidName = "-galar"
+                raidName = raidName + "-galar"
             }
             else{            
-                raidName = "-" + raid.form.toLowerCase()
+                raidName = raidName + "-" + raid.form.toLowerCase()
             }
         }
 
