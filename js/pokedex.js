@@ -8,14 +8,16 @@ $(document).ready(function(){
         $('#myModal').modal('show');
     }
 
+    // Carga un set inicial de pokemons
     anadirPokemon();
+
+    // Le añade funcionalidad al botón
+    let boton = document.querySelector('#addPokemon')
+    boton.addEventListener("click", anadirPokemon)
 });
 
-var last =0;
-                            
-
-let boton = document.querySelector('#addPokemon')
-boton.addEventListener("click", anadirPokemon)
+// Variable para almacenar el numero de pokemons mostrados (global)
+var last = 0;
 
 function anadirPokemon(e){
     if(last<900){

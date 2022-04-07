@@ -5,7 +5,6 @@ window.onload = function () {
         if (xhr.status == 200) {
             let arrayRaids = JSON.parse(xhr.responseText)
 
-
             tierMega5(arrayRaids);
             tier3(arrayRaids);
             tier1(arrayRaids);

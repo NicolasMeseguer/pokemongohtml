@@ -1,5 +1,6 @@
 $(document).ready(function () {
   
+    // Comprueba el Local Storage
     for (let i = 1; i < 7; i++) {
         let pokemonInfo = localStorage.getItem("pokemonteam"+i)
         if (pokemonInfo != null) {
@@ -12,13 +13,14 @@ $(document).ready(function () {
         }
     }
 
-});
+    // Añadir funcionalidad a los botones
+    let botonAdd = document.querySelectorAll('.pokemonanyadir').forEach(button => {
+      button.addEventListener('click', añadirPokemon);
+    });
+    let botonRemove = document.querySelectorAll('.pokemonquitar').forEach(button => {
+      button.addEventListener('click', eliminarPokemon);
+    });
 
-let botonAdd = document.querySelectorAll('.pokemonanyadir').forEach(button => {
-    button.addEventListener('click', añadirPokemon);
-});
-let botonRemove = document.querySelectorAll('.pokemonquitar').forEach(button => {
-    button.addEventListener('click', eliminarPokemon);
 });
 
 function añadirPokemon(e) {
