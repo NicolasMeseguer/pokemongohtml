@@ -17,6 +17,9 @@ const filesToCache = [
     //Pages
     '/index.html',
     '/equipo.html',
+    '/offline.html',
+    '/terminos.html',
+    '/privacidad.html',
 
     // Styles
     '/css/main.css',
@@ -34,6 +37,7 @@ const filesToCache = [
     '/images/no-pokemon.png',
     '/images/entrenador.png',
     '/images/charge_battery.png',
+    '/images/header-background-sticky.png',
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */
