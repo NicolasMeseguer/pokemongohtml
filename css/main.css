@@ -200,3 +200,8 @@ img.trainer.medium {max-height: 250px;
 .raidTierIcon{
   filter:invert(0.7)
 }
+
+.offline{
+  background-color: red;
+  text-align: center;
+}
