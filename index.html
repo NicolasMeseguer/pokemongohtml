@@ -18,6 +18,18 @@
   <!-- Custom styles for this template -->
   <link href="./css/main.css" rel="stylesheet">
 
+  <!-- Manifest. Our PWA -->
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Some specific vendor suggestions --> 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Pokemon Go!">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  
+  <meta name="msapplication-TileImage" content="images/icons/icon-full.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+
 </head>
 
 <body>
@@ -46,6 +58,7 @@
       </div>
       <!--/.navbar-collapse -->
     </div>
+    <div class="offline" style="display: none;">OFFLINE</div>
   </nav>
 
   <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -56,6 +69,31 @@
           <a href="#">
             <img src="./images/pokemon_go_logo.png" />
           </a>
+        </div>
+      </div>
+
+      <!-- Battery Modal -->
+      <div class="modal fade in" id="batteryModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+              </button>
+              <h4 class="modal-title text-danger" id="myModalLabel">¡Batería baja!</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row" style="padding:15px">
+                Hemos detectado que el nivel de batería de tu dispositivo está por debajo del 30%. Te recomendamos cargarlo si quieres jugar a Pokemon GO.
+                <br><br>
+                <img src="./images/charge_battery.png" style="max-width: 60%;" class="img-responsive center-block thumbnail" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Entiendo !</button>
+              <button type="button" id="cerrarBatteryModal" class="btn btn-danger" data-dismiss="modal">No mostrar más</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -195,6 +233,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script src="./js/app.js"></script>
 </body>
 
 </html>
