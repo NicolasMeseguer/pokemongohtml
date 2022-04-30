@@ -5,6 +5,17 @@ $(document).ready(function(){
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('service-worker.js');
 	}
+
+	window.addEventListener('offline', () => {
+		$('.offline').show();
+		$('#online-container').hide();
+		$('#offline-container').show();
+		$('#addPokemon').hide();
+	});
+	
+	window.addEventListener('online', () => {
+		location.reload();
+	});
 	
 	navigator.getBattery().then(battery => {
 	
@@ -27,13 +38,9 @@ $(document).ready(function(){
 
 	if(!window.navigator.onLine){
 		$('.offline').show();
+		$('#online-container').hide();
+		$('#offline-container').show();
+		$('#addPokemon').hide();
 	}
-});
 
-window.addEventListener('offline', () => {
-	$('.offline').show();
-});
-
-window.addEventListener('online', () => {
-	$('.offline').hide();
 });

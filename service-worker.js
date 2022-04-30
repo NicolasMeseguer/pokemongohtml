@@ -17,9 +17,10 @@ const filesToCache = [
     //Pages
     '/index.html',
     '/equipo.html',
-    '/offline.html',
     '/terminos.html',
     '/privacidad.html',
+    '/pokedex.html',
+    '/raid.html',
 
     // Styles
     '/css/main.css',
