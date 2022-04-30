@@ -17,7 +17,6 @@ const filesToCache = [
     //Pages
     '/index.html',
     '/equipo.html',
-    '/js/equipo.js',
 
     // Styles
     '/css/main.css',
@@ -25,6 +24,8 @@ const filesToCache = [
 
     // JS
     '/js/bootstrap.min.js',
+    '/js/app.js',
+    '/js/equipo.js',
 
     // Imgs
     '/images/pokeball.png',
@@ -32,6 +33,7 @@ const filesToCache = [
     '/images/pokemon_go_logo.png',
     '/images/no-pokemon.png',
     '/images/entrenador.png',
+    '/images/charge_battery.png',
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */
@@ -41,6 +43,7 @@ const staticCacheName = 'pages-cache-v2';
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(staticCacheName).then(cache => {
+            console.log('Opened cache');
             return cache.addAll(filesToCache);
         })
     );

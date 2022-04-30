@@ -71,6 +71,31 @@
         </div>
       </div>
 
+      <!-- Battery Modal -->
+      <div class="modal fade in" id="batteryModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+              </button>
+              <h4 class="modal-title text-danger" id="myModalLabel">¡Batería baja!</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row" style="padding:15px">
+                Hemos detectado que el nivel de batería de tu dispositivo está por debajo del 30%. Te recomendamos cargarlo si quieres jugar a Pokemon GO.
+                <br><br>
+                <img src="./images/charge_battery.png" style="max-width: 60%;" class="img-responsive center-block thumbnail" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Entiendo !</button>
+              <button type="button" id="cerrarBatteryModal" class="btn btn-danger" data-dismiss="modal">No mostrar más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Example row of columns -->
       <div class="container">
         <div class="row">
