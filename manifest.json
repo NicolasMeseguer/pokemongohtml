@@ -1,0 +1,32 @@
+{
+    "name": "Pokemon Go",
+    "short_name": "Pokemon Go",
+    "description": "Aplicación web progresiva que sirve como guía para el juego Pokemon GO, dispone de distintos menús interactivos y se encuentra actualizada mediante el uso de APIs.",
+    "icons": [{
+      "src": "images/icons/icon-128x128.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }, {
+        "src": "images/icons/icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      }, {
+        "src": "images/icons/icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      }, {
+        "src": "images/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }, {
+        "src": "images/icons/icon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }],
+    "start_url": "index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#07214D",
+    "theme_color": "#FFCB05"
+  }
+  
