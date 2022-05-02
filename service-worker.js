@@ -43,7 +43,7 @@ const filesToCache = [
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */
-const staticCacheName = 'pages-cache-v4';
+const staticCacheName = 'pages-cache-v5';
 
 // When the service worker is installed...
 self.addEventListener('install', event => {
