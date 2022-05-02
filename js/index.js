@@ -80,6 +80,8 @@ $(document).ready(function(){
                             btn.classList.add('btn-success');
                             })
                         .catch((error) => console.log('Error compartiendo.', error));
+                    } else {
+                        errorUbicacion();
                     }
                 },
                 () => {

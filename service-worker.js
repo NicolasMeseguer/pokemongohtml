@@ -30,6 +30,7 @@ const filesToCache = [
     '/js/bootstrap.min.js',
     '/js/app.js',
     '/js/equipo.js',
+    '/js/index.js',
 
     // Imgs
     '/images/pokeball.png',
@@ -42,7 +43,7 @@ const filesToCache = [
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */
-const staticCacheName = 'pages-cache-v2';
+const staticCacheName = 'pages-cache-v3';
 
 // When the service worker is installed...
 self.addEventListener('install', event => {
