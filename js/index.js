@@ -64,7 +64,9 @@ $(document).ready(function(){
 	window.initMap = initMap;
 
     document.getElementById('compartirUbicacion').onclick = function() {
-		if (navigator.geolocation) {
+		let btn = document.getElementById('compartirUbicacion');
+
+		if (navigator.geolocation && !btn.classList.contains('disabled')) {
 			navigator.geolocation.getCurrentPosition(
                 (position) => {
                     let mensaje = "Mi ubicación es: " + position.coords.latitude + " (lat), " + position.coords.longitude + " (long).";
@@ -76,8 +78,8 @@ $(document).ready(function(){
                             url: 'https://nicolasmeseguer.github.io',
                         })
                         .then(() => {
-                            document.getElementById('compartirUbicacion').classList.remove('btn-primary');
-                            document.getElementById('compartirUbicacion').classList.add('btn-success');
+                            btn.classList.remove('btn-primary');
+                            btn.classList.add('btn-success');
                             })
                         .catch((error) => console.log('Error compartiendo.', error));
                     } else {
