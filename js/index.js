@@ -76,8 +76,8 @@ $(document).ready(function(){
                             url: 'https://nicolasmeseguer.github.io',
                         })
                         .then(() => {
-                            btn.classList.remove('btn-primary');
-                            btn.classList.add('btn-success');
+                            document.getElementById('compartirUbicacion').classList.remove('btn-primary');
+                            document.getElementById('compartirUbicacion').classList.add('btn-success');
                             })
                         .catch((error) => console.log('Error compartiendo.', error));
                     } else {
