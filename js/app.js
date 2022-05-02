@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$('#online-container').hide();
 		$('#offline-container').show();
 		$('#addPokemon').hide();
-		document.getElementById('compartirUbicacion').hide();
+		$('#compartirUbicacion').hide();
 	});
 	
 	window.addEventListener('online', () => {
