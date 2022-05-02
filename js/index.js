@@ -65,33 +65,34 @@ $(document).ready(function(){
 
     document.getElementById('compartirUbicacion').onclick = function() {
 		let btn = document.getElementById('compartirUbicacion');
-
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    let mensaje = "Mi ubicación es: " + position.coords.latitude + " (lat), " + position.coords.longitude + " (long).";
-                
-                    if (navigator.share) {
-                        navigator.share({
-                            title: 'Estoy aquí',
-                            text: mensaje,
-                            url: 'https://nicolasmeseguer.github.io',
-                        })
-                        .then(() => {
-                            btn.classList.remove('btn-primary');
-                            btn.classList.add('btn-success');
-                            })
-                        .catch((error) => console.log('Error compartiendo.', error));
-                    } else {
-                        errorUbicacion();
-                    }
-                },
-                () => {
-                    errorUbicacion();
-                }
-              );
-		} else {
-			errorUbicacion();
+		if(!btn.classList.contains('disabled')) {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(
+					(position) => {
+						let mensaje = "Mi ubicación es: " + position.coords.latitude + " (lat), " + position.coords.longitude + " (long).";
+					
+						if (navigator.share) {
+							navigator.share({
+								title: 'Estoy aquí',
+								text: mensaje,
+								url: 'https://nicolasmeseguer.github.io',
+							})
+							.then(() => {
+								btn.classList.remove('btn-primary');
+								btn.classList.add('btn-success');
+								})
+							.catch((error) => console.log('Error compartiendo.', error));
+						} else {
+							errorUbicacion();
+						}
+					},
+					() => {
+						errorUbicacion();
+					}
+				);
+			} else {
+				errorUbicacion();
+			}
 		}
 	}
 });

@@ -12,7 +12,6 @@ $(document).ready(function(){
 		$('#online-container').hide();
 		$('#offline-container').show();
 		$('#addPokemon').hide();
-		$('#compartirUbicacion').prop('disabled', true);
 		let btn = document.getElementById('compartirUbicacion');
  		btn.classList.add('disabled');
  		btn.title = "No tienes conexión a internet.";
