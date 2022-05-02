@@ -66,7 +66,7 @@ $(document).ready(function(){
     document.getElementById('compartirUbicacion').onclick = function() {
 		let btn = document.getElementById('compartirUbicacion');
 
-		if (navigator.geolocation && !btn.classList.contains('disabled')) {
+		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(
                 (position) => {
                     let mensaje = "Mi ubicación es: " + position.coords.latitude + " (lat), " + position.coords.longitude + " (long).";
