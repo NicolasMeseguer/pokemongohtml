@@ -2,6 +2,7 @@
 // Notice how we test our browser if 'serviceWorkers' are 
 // supported. If not, our web app should behave as a regular web 
 $(document).ready(function(){
+
 	if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('service-worker.js');
 	}
