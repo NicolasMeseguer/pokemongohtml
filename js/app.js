@@ -12,10 +12,13 @@ $(document).ready(function(){
 		$('#online-container').hide();
 		$('#offline-container').show();
 		$('#addPokemon').hide();
-		let btn = document.getElementById('compartirUbicacion');
- 		btn.classList.add('disabled');
- 		btn.title = "No tienes conexión a internet.";
+//		let btn = document.getElementById('compartirUbicacion');
+ //		btn.classList.add('disabled');
+ 	//	btn.title = "No tienes conexión a internet.";		 
+		$('#compartirUbicacion').attr('disabled',true);	 
+//		$('#compartirUbicacion').attr('title', "No tienes conexión a internet.");
  		$('[data-toggle="tooltip"]').tooltip();
+		$('.pokemonanyadir').attr('disabled',true);
 	});
 	
 	window.addEventListener('online', () => {
@@ -25,20 +28,17 @@ $(document).ready(function(){
 	navigator.getBattery().then(battery => {
 	
 		const c = battery.level * 100;
-		var cerrarModalBatteryStatus = localStorage.getItem("cerrarModalBattery");
+		var cerrarModalBatteryStatus = sessionStorage.getItem("cerrarModalBattery");
 
 		// Print the modal
 		if(c <= 30 && cerrarModalBatteryStatus != 1) {
 			$('#batteryModal').modal('show');
 		}
-		else if(c > 50) {
-			localStorage.removeItem("cerrarModalBattery");
-		}
 	
 	});
 
 	document.getElementById('cerrarBatteryModal').onclick = function() {
-		localStorage.setItem("cerrarModalBattery", 1);
+		sessionStorage.setItem("cerrarModalBattery", 1);
 	}
 
 	if(!window.navigator.onLine){
@@ -46,6 +46,7 @@ $(document).ready(function(){
 		$('#online-container').hide();
 		$('#offline-container').show();
 		$('#addPokemon').hide();
+		$('.pokemonanyadir').attr('disabled',true);
 	}
 
 });
