@@ -40,6 +40,7 @@ const filesToCache = [
     '/images/entrenador.png',
     '/images/charge_battery.png',
     '/images/header-background-sticky.png',
+    '/images/offline.png',
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */

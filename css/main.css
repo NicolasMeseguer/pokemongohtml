@@ -225,3 +225,17 @@ img.trainer.medium {max-height: 250px;
 .custom-map-control-button:hover {
   background: rgb(235, 235, 235);
 }
+
+
+@media (max-width: 345px) {
+  #offline_row {
+    display: grid;
+    justify-items: center;
+  }
+}
+
+@media (min-width: 600px) {
+  #offline-container {
+    max-width: 550px;
+  }
+}
