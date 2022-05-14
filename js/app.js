@@ -12,17 +12,20 @@ $(document).ready(function(){
 		$('#online-container').hide();
 		$('#offline-container').show();
 		$('#addPokemon').hide();
-//		let btn = document.getElementById('compartirUbicacion');
- //		btn.classList.add('disabled');
- 	//	btn.title = "No tienes conexión a internet.";		 
-		$('#compartirUbicacion').attr('disabled',true);	 
-//		$('#compartirUbicacion').attr('title', "No tienes conexión a internet.");
+		$('#compartirUbicacion').addClass('disabled')
+		$('#compartirUbicacion').attr('title', "No tienes conexión a internet.");
  		$('[data-toggle="tooltip"]').tooltip();
 		$('.pokemonanyadir').attr('disabled',true);
 	});
 	
 	window.addEventListener('online', () => {
-		location.reload();
+		$('.offline').hide();
+		$('#online-container').show();
+		$('#offline-container').hide();
+		$('#addPokemon').show();
+		$('#compartirUbicacion').removeClass('disabled');
+		$('[data-toggle="tooltip"]').tooltip("destroy");
+		$('.pokemonanyadir').attr('disabled',false);
 	});
 	
 	navigator.getBattery().then(battery => {
