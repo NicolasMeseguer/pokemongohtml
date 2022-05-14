@@ -26,6 +26,10 @@ $(document).ready(function(){
 		$('#compartirUbicacion').removeClass('disabled');
 		$('[data-toggle="tooltip"]').tooltip("destroy");
 		$('.pokemonanyadir').attr('disabled',false);
+
+		var pathname = window.location.pathname;
+		if(pathname.indexOf("pokedex.html") >= 0 || pathname.indexOf("raid.html") >= 0)
+			location.reload()
 	});
 	
 	navigator.getBattery().then(battery => {
