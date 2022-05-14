@@ -44,28 +44,53 @@ const filesToCache = [
 ];
 
 /** @const staticCacheName String The name of the version. Update it to get the new files */
-const staticCacheName = 'pages-cache-v5';
+const staticCacheName = 'pages-cache-v11';
 
 // When the service worker is installed...
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(staticCacheName).then(cache => {
             console.log('Opened cache');
+            self.skipWaiting();
             return cache.addAll(filesToCache);
         })
     );
 });
+/*self.addEventListener('install', event => {
+    event.waitUntil(
+        Promise.all([caches.open(staticCacheName),self.skipWaiting()]).then(function(storage){
+            var static_cache = storage[0];
+            return Promise.all([static_cache.addAll(filesToCache)]);
+        })
+    );
+});*/
 
 // Every time a resource is fetch...
-self.addEventListener('fetch', function (event) {
+/*self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request).then(function (response) {
             // Return the cache or fetch in the network
             console.log (event.request.url + " " + (response ? "in cache" : "not in cache"));
-            return response || fetch(event.request);
+            return fetch(event.request) || response;
         })
     );
 });
+*/
+self.addEventListener('fetch', (event) => {
+    event.respondWith(async function() {
+      const cache = await caches.open(staticCacheName);
+      const cachedResponse = await cache.match(event.request);
+      const networkResponsePromise = fetch(event.request);
+  
+      event.waitUntil(async function() {
+        const networkResponse = await networkResponsePromise;
+        await cache.put(event.request, networkResponse.clone());
+      }());
+
+      // Returned the cached response if we have one, otherwise return the network response.
+      return cachedResponse || networkResponsePromise;
+    }());
+  });
 
 /**
  * Removing outdated caches
@@ -75,16 +100,16 @@ self.addEventListener('fetch', function (event) {
  * Because the old version is out of the way, it's a good time 
  * to delete unused caches.
  */
- /*self.addEventListener ('activate', function(event) {
-    event.waitUntil (
-        caches.keys().then (function (filesToCache) {
-            return Promise.all (
-                filesToCache.filter (function (cacheName) {
-                    return true;
-                }).map (function(cacheName) {
-                    return caches.delete(cacheName);
-                })
-            );
-        })
-    );
-});*/
+self.addEventListener ('activate', (event) => {
+    event.waitUntil(async function() {
+        const cacheNames = await caches.keys()
+        await Promise.all(
+            cacheNames.filter((cacheName) => {
+                if (cacheName !== staticCacheName){
+                    console.log("Deleted cache")
+                    return true
+                }
+            }).map(cacheName => caches.delete(cacheName))
+        );
+    }());
+});
